@@ -46,6 +46,16 @@ public class ModelClient {
     public LocalDate dateCreation;
     @Column(name = "lastUpdate", nullable = false, length = 10)
     public LocalDate lastUpdate;
+    @Column(name = "creditLimit", nullable = false, length = 10)
+    public double creditLimit;
+
+    public double getCreditLimit() {
+        return creditLimit;
+    }
+
+    public void setCreditLimit(double creditLimit) {
+        this.creditLimit = creditLimit;
+    }
 
     public ModelAddress getAddress() {
         return address;
