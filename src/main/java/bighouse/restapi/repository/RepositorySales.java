@@ -1,7 +1,9 @@
 package bighouse.restapi.repository;
 
-import bighouse.restapi.model.ModelSales;
+import bighouse.restapi.model.ModelSale;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface RepositorySales extends CrudRepository<ModelSales, Long> {
+@Repository
+public interface RepositorySales extends CrudRepository<ModelSale, Long> {
 }
