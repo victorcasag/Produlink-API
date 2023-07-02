@@ -13,13 +13,11 @@ import java.util.Date;
 public class ModelProduct {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "categoryId", referencedColumnName = "id", nullable = false)
-    public ModelCategory Category;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "stockId", referencedColumnName = "id", nullable = false)
-    public ModelStock Stock;
+    public ModelCategory category;
+    public int stock;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "vendorId", referencedColumnName = "id", nullable = false)
-    public ModelVendor Vendor;
+    public ModelVendor vendor;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
@@ -47,6 +45,30 @@ public class ModelProduct {
     public long barCode;
     @Column(nullable = false, length = 2)
     public String measure;
+
+    public ModelCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(ModelCategory category) {
+        this.category = category;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    public ModelVendor getVendor() {
+        return vendor;
+    }
+
+    public void setVendor(ModelVendor vendor) {
+        this.vendor = vendor;
+    }
 
     public Long getId() {
         return id;

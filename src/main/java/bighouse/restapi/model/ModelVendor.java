@@ -21,9 +21,9 @@ public class ModelVendor {
     @Column(nullable = true, length = 255)
     public String tradingName;
     @Column(nullable = false, length = 14)
-    public int cnpj;
+    public Long cnpj;
     @Column(nullable = false, length = 15)
-    public int imei;
+    public Long imei;
     @Column(nullable = false, length = 20)
     public int phone;
     @Column(nullable = false, length = 80, unique = true)
@@ -53,19 +53,19 @@ public class ModelVendor {
         this.tradingName = tradingName;
     }
 
-    public int getCnpj() {
+    public Long getCnpj() {
         return cnpj;
     }
 
-    public void setCnpj(int cnpj) {
+    public void setCnpj(Long cnpj) {
         this.cnpj = cnpj;
     }
 
-    public int getImei() {
+    public Long getImei() {
         return imei;
     }
 
-    public void setImei(int imei) {
+    public void setImei(Long imei) {
         this.imei = imei;
     }
 

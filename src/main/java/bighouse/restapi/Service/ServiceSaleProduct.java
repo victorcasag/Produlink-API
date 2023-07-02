@@ -4,6 +4,7 @@ import bighouse.restapi.model.ModelSaleProduct;
 import bighouse.restapi.repository.RepositorySaleProduct;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -15,15 +16,17 @@ public class ServiceSaleProduct {
         this.repositorySaleProduct = repositorySaleProduct;
     }
 
-    public ModelSaleProduct FindById(Long id){
+    public List<ModelSaleProduct> FindById(Long id){
         if (id == null || id < 0) {
             throw new IllegalArgumentException("ID Sale Product invalid");
         }
 
-        Optional<ModelSaleProduct> optionalSaleProduct = repositorySaleProduct.findById(id);
+        Optional<ModelSaleProduct> saleProduct = repositorySaleProduct.findById(id);
 
-        if (optionalSaleProduct.isPresent()) {
-            return optionalSaleProduct.get();
+        if (saleProduct.isPresent()) {
+            List<ModelSaleProduct> listSaleProduct = new ArrayList<>();
+            listSaleProduct.add(saleProduct.get());
+            return listSaleProduct;
         } else {
             throw new NoSuchElementException("Sale Product not found");
         }

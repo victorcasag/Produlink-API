@@ -19,10 +19,10 @@ public class ControllerSaleProduct {
     }
 
     @GetMapping("/search")
-    public List<ModelSaleProduct> FindAll(){ return (List<ModelSaleProduct>) serviceSaleProduct.FindAll(); }
+    public List<ModelSaleProduct> FindAll(){ return serviceSaleProduct.FindAll(); }
     @GetMapping(value = "/search/{id}")
-    public ModelSaleProduct FindById(@PathVariable Long id){
-        return serviceSaleProduct.FindById(id);
+    public List<ModelSaleProduct> FindById(@PathVariable Long id){
+        return (List<ModelSaleProduct>) serviceSaleProduct.FindById(id);
     }
     @PostMapping(path = "/insert")
     public ModelSaleProduct InsertUser(@RequestBody ModelSaleProduct saleProduct){

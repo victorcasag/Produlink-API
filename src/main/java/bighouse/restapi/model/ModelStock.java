@@ -7,6 +7,9 @@ import jakarta.persistence.*;
         @Index(name = "index_id", columnList = "id", unique = true)
 })
 public class ModelStock {
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "productId", referencedColumnName = "id", nullable = false)
+    public ModelProduct product;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
@@ -19,6 +22,14 @@ public class ModelStock {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public ModelProduct getProduct() {
+        return product;
+    }
+
+    public void setProduct(ModelProduct product) {
+        this.product = product;
     }
 
     public int getQuantityStock() {
