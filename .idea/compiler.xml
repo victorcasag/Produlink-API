@@ -8,11 +8,19 @@
         <outputRelativeToContentRoot value="true" />
         <module name="rest-api" />
         <module name="Produlink" />
+<<<<<<< HEAD
+=======
+        <module name="API_TCC" />
+>>>>>>> b990224 (First commit)
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+<<<<<<< HEAD
+=======
+      <module name="API_TCC" options="-parameters" />
+>>>>>>> b990224 (First commit)
       <module name="Produlink" options="-parameters" />
       <module name="rest-api" options="-parameters" />
     </option>
